@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Projeto_UVA</string>
     <string name="testeLuiz">TesteLuiz</string>
+    <string name="entrar">Entrar</string>
+    <string name="text_cadastro">Não tenho matrícula!</string>
+    <string name="title_cadastro">Matricule-se</string>
 </resources>
