@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544194094580",
+    "project_id": "projeto-uva",
+    "storage_bucket": "projeto-uva.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544194094580:android:d59ef6a16a0f3d95b7c5a1",
+        "android_client_info": {
+          "package_name": "com.example.projeto_uva"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsAkvcWvPcSM5lmw_ZZd8Gtd7WREB8ECA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

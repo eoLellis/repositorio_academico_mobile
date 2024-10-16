@@ -35,7 +35,7 @@
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/ic_user"
+        android:src="@drawable/ic_nome"
         app:layout_constraintTop_toBottomOf="@id/containerUser"
         app:layout_constraintStart_toStartOf="parent"
 />
@@ -43,7 +43,6 @@
         android:id="@+id/text_nome_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="João da Silva Souza"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -66,7 +65,6 @@
         android:id="@+id/text_matricula_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="001712345"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -77,6 +75,7 @@
         />
 
     <Button
+        android:id="@+id/bt_deslogar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"

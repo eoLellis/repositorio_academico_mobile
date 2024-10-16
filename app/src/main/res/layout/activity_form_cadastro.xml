@@ -36,22 +36,25 @@
         android:id="@+id/edit_nome"
         style="@style/Edit_Text"
         android:hint="Seu nome..."
-        android:inputType="textPersonName"
+        android:inputType="text"
         app:layout_constraintTop_toTopOf="@id/containerComponents"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         />
+
     <EditText
         android:id="@id/edit_matricula"
         style="@style/Edit_Text"
-        android:hint="Sua matricula..."
+        android:layout_marginTop="12dp"
         android:drawableRight="@drawable/ic_matricula"
-        app:layout_constraintTop_toBottomOf="@id/edit_nome"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        android:hint="Sua matricula..."
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        />
-    <EditText
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome" />
 
+    <EditText
+        android:id="@+id/edit_senha"
         style="@style/Edit_Text"
         android:hint="Sua senha..."
         android:inputType="textPassword"
@@ -61,7 +64,8 @@
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         />
     <androidx.appcompat.widget.AppCompatButton
-    style="@style/Button"
+        android:id="@+id/bt_cadastrar"
+        style="@style/Button"
         android:layout_marginTop="30dp"
         android:text="Cadastrar"
         app:layout_constraintTop_toBottomOf="@id/containerComponents"
