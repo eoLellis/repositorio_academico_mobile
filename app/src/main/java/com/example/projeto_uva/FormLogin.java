@@ -2,18 +2,10 @@ package com.example.projeto_uva;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.Firebase;
-import com.google.firebase.FirebaseError;
 import android.graphics.Color;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,7 +63,7 @@ public class FormLogin extends AppCompatActivity {
                                 .show();
 
                         // Redirecionar para a próxima tela (exemplo de redirecionamento)
-                        Intent intent = new Intent(FormLogin.this, TelaPrincipal.class);
+                        Intent intent = new Intent(FormLogin.this, Tela_Inicial.class);
                         startActivity(intent);
                         finish();
 

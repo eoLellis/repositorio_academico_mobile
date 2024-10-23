@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".tela_inicial">
+    tools:context=".Tela_Inicial">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Topbar"
@@ -33,9 +33,14 @@
             android:id="@+id/button_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_nome"
-            tools:layout_editor_absoluteX="347dp"
-            tools:layout_editor_absoluteY="15dp" />
+            android:layout_marginStart="266dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_nome" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Topbar">
 
         <ImageButton
-            android:id="@+id/Materia1"
+            android:id="@+id/button_materia1"
             android:layout_width="125dp"
             android:layout_height="125dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +67,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.083"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@drawable/download" />
 
         <ImageButton
             android:id="@+id/Materia2"
@@ -74,7 +79,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.083"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@drawable/livros2" />
 
         <ImageButton
             android:id="@+id/Materia3"
@@ -86,7 +91,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.48"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@drawable/livros3" />
 
         <ImageButton
             android:id="@+id/Materia4"
@@ -98,7 +103,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.48"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@drawable/livros4" />
 
         <ImageButton
             android:id="@+id/Materia5"
@@ -110,7 +115,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.874"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@drawable/livros5" />
 
         <ImageButton
             android:id="@+id/Materia6"
@@ -122,7 +127,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.874"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@drawable/livros6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
