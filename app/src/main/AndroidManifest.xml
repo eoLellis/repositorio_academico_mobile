@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Projeto_UVA"
         tools:targetApi="31">
         <activity
+            android:name=".Materia1"
+            android:exported="true"/>
+        <activity
+            android:name=".Materia2"
+            android:exported="true"/>
+        <activity
             android:name=".Tela_Inicial"
             android:exported="false" />
         <activity
