@@ -10,6 +10,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.annotation.NonNull;
 
 public class Tela_Inicial extends AppCompatActivity {
 
@@ -57,4 +59,6 @@ public class Tela_Inicial extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

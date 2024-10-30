@@ -15,6 +15,11 @@
         <activity
             android:name=".Tela_Inicial"
             android:exported="false" />
+        <activity android:name=".CalendarioActivity" />
+        <activity android:name=".NotificacoesActivity" />
+        <activity android:name=".TelaPrincipalActivity" />
+        <activity android:name=".MensagensActivity" />
+        <activity android:name=".ConfiguracoesActivity" />
         <activity
             android:name=".TelaPerfil"
             android:exported="false" />
