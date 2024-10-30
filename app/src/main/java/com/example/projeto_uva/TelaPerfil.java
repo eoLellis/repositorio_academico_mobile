@@ -11,9 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.DocumentSnapshot;
 
-public class TelaPrincipal extends AppCompatActivity {
+public class TelaPerfil extends AppCompatActivity {
 
     private TextView textNomeUser, textMatriculaUser;
     private Button btDeslogar;
@@ -23,7 +22,7 @@ public class TelaPrincipal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_principal);
+        setContentView(R.layout.activity_tela_perfil);
 
         IniciarComponentes();
 
@@ -54,7 +53,7 @@ public class TelaPrincipal extends AppCompatActivity {
 
         btDeslogar.setOnClickListener(view -> {
             mAuth.signOut();
-            Intent intent = new Intent(TelaPrincipal.this, FormLogin.class);
+            Intent intent = new Intent(TelaPerfil.this, FormLogin.class);
             startActivity(intent);
             finish();  // Encerra a TelaPrincipal
         });

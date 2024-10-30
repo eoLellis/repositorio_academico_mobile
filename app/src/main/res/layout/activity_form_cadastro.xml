@@ -47,7 +47,7 @@
         style="@style/Edit_Text"
         android:layout_marginTop="12dp"
         android:drawableRight="@drawable/ic_matricula"
-        android:hint="Sua matricula..."
+        android:hint="Seu E-mail Institucional..."
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
