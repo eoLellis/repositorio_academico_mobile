@@ -22,7 +22,7 @@
             android:name=".Tela_Inicial"
             android:exported="false" />
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".TelaPerfil"
             android:exported="false" />
         <activity
             android:name=".FormCadastro"

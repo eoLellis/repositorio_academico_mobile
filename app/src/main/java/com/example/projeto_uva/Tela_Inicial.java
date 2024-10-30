@@ -1,15 +1,15 @@
 package com.example.projeto_uva;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.view.Menu;
+import android.view.MenuItem;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import android.content.Intent;
-import android.view.View;
-import android.widget.ImageButton;
 
 public class Tela_Inicial extends AppCompatActivity {
 
@@ -18,63 +18,43 @@ public class Tela_Inicial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tela_inicial);
+
+        // Configura o Toolbar como barra de ação
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Ajusta os insets para edge-to-edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        ImageButton buttonProfile = findViewById(R.id.button_profile);
-        buttonProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Cria o Intent para redirecionar para a Tela de perfil
-                Intent intent = new Intent(Tela_Inicial.this, TelaPrincipal.class);
-                startActivity(intent);  // Inicia a nova Activity
-            }
-        });
+        // Configurar os botões de matéria conforme antes
+        // Botões para matérias
+        findViewById(R.id.button_materia1).setOnClickListener(view -> startActivity(new Intent(this, Materia1.class)));
+        findViewById(R.id.button_materia2).setOnClickListener(view -> startActivity(new Intent(this, Materia2.class)));
+        findViewById(R.id.button_materia3).setOnClickListener(view -> startActivity(new Intent(this, Materia3.class)));
+        findViewById(R.id.button_materia4).setOnClickListener(view -> startActivity(new Intent(this, Materia4.class)));
+        findViewById(R.id.button_materia5).setOnClickListener(view -> startActivity(new Intent(this, Materia5.class)));
+        findViewById(R.id.button_materia6).setOnClickListener(view -> startActivity(new Intent(this, Materia6.class)));
+    }
 
-        ImageButton ButtonMateria1 = findViewById(R.id.button_materia1);
-        ButtonMateria1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tela_Inicial.this, Materia1.class);
-            }
-        });
-        ImageButton ButtonMateria2 = findViewById(R.id.Materia2);
-        ButtonMateria1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tela_Inicial.this, Materia2.class);
-            }
-        });
-        ImageButton ButtonMateria3 = findViewById(R.id.Materia3);
-        ButtonMateria1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tela_Inicial.this, Materia3.class);
-            }
-        });
-        ImageButton ButtonMateria4 = findViewById(R.id.Materia4);
-        ButtonMateria1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tela_Inicial.this, Materia4.class);
-            }
-        });
-        ImageButton ButtonMateria5 = findViewById(R.id.Materia5);
-        ButtonMateria1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tela_Inicial.this, Materia5.class);
-            }
-        });
-        ImageButton ButtonMateria6 = findViewById(R.id.Materia6);
-        ButtonMateria1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tela_Inicial.this, Materia6.class);
-            }
-        });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Infla o menu no Toolbar
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_profile) {
+            // Abre a tela de perfil quando o item do menu é clicado
+            Intent intent = new Intent(Tela_Inicial.this, TelaPerfil.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
