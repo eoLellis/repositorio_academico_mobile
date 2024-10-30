@@ -12,14 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_UVA"
         tools:targetApi="31">
+        <activity
+        android:name=".SplashActivity"
+        android:exported="true"
+        android:theme="@style/Theme.App.SplashScreen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".Materia1"/>
-        <activity android:name=".Materia2"/>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".Materia1" />
+        <activity android:name=".Materia2" />
         <activity android:name=".Materia3" />
         <activity android:name=".Materia4" />
         <activity android:name=".Materia5" />
         <activity android:name=".Materia6" />
-
         <activity
             android:name=".Tela_Inicial"
             android:exported="false" />
@@ -40,11 +48,6 @@
         <activity
             android:name=".FormLogin"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background_color" /> <!-- Referência à cor definida -->
+    <item>
+        <bitmap
+            android:src="@drawable/uva_logo"
+            android:gravity="center"
+            android:tileMode="disabled" /> <!-- Desativa o modo de repetição -->
+    </item>
+</layer-list>
