@@ -3,14 +3,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/darkPurple">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-vindo à Matéria 3!"
+        android:text="Desenvolvimento de Software"
         android:textSize="24sp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
 
-    <!-- Adicione mais elementos conforme necessário -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atividades:"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Atividade 1 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atividade 1"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desenvolver um Sistema de Controle de Estoque"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição: Criar um sistema de controle de estoque utilizando Java, com funcionalidades de cadastro, atualização e remoção de produtos."
+        android:textSize="14sp"
+        android:textColor="@color/white"/>
+
+    <!-- Atividade 2 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atividade 2"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implementar um CRUD com Spring Boot"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição: Desenvolver uma aplicação utilizando Spring Boot para realizar operações de Create, Read, Update e Delete em uma base de dados."
+        android:textSize="14sp"
+        android:textColor="@color/white"/>
+
+    <!-- Adicione mais atividades conforme necessário -->
 </LinearLayout>
