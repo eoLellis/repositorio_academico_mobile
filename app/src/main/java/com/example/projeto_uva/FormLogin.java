@@ -9,9 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Objects;
 
 public class FormLogin extends AppCompatActivity {
 
@@ -19,6 +24,7 @@ public class FormLogin extends AppCompatActivity {
     private Button bt_entrar;
     private TextView text_tela_cadastro;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     String[] mensagens = {"Preencha todos os campos!", "Login realizado com sucesso!"};
 
@@ -26,7 +32,8 @@ public class FormLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
-        mAuth = FirebaseAuth.getInstance();  // Inicializa o Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         IniciarComponentes();
 
@@ -41,7 +48,7 @@ public class FormLogin extends AppCompatActivity {
                 snackbar.setTextColor(Color.BLACK);
                 snackbar.show();
             } else {
-                LogarUsuario(email, senha);
+                LogarAluno(email, senha);
             }
         });
 
@@ -51,28 +58,26 @@ public class FormLogin extends AppCompatActivity {
         });
     }
 
-    private void LogarUsuario(String email, String password) {
+    private void LogarAluno(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        // Login realizado com sucesso, você pode redirecionar para outra activity
-                        Snackbar.make(findViewById(R.id.main), mensagens[1], Snackbar.LENGTH_SHORT)
-                                .setBackgroundTint(Color.GREEN)
-                                .setTextColor(Color.WHITE)
-                                .show();
-
-                        // Redirecionar para a próxima tela (exemplo de redirecionamento)
-                        Intent intent = new Intent(FormLogin.this, Tela_Inicial.class);
-                        startActivity(intent);
-                        finish();
-
+                        FirebaseUser aluno = mAuth.getCurrentUser();
+                        if (aluno != null) {
+                            String aluno_id = aluno.getUid();
+                            DocumentReference docRef = db.collection("alunos").document(aluno_id);
+                            Aluno alunoData = new Aluno(email);
+                            ((DocumentReference) docRef).set(alunoData).addOnSuccessListener(aVoid -> {
+                                Snackbar.make(findViewById(R.id.main), mensagens[1], Snackbar.LENGTH_SHORT).setBackgroundTint(Color.GREEN).setTextColor(Color.WHITE).show();
+                                Intent intent = new Intent(FormLogin.this, Tela_Inicial.class);
+                                startActivity(intent);
+                                finish();
+                            }).addOnFailureListener(e -> {
+                                Snackbar.make(findViewById(R.id.main), "Erro ao salvar dados: " + e.getMessage(), Snackbar.LENGTH_LONG).setBackgroundTint(Color.RED).setTextColor(Color.WHITE).show();
+                            });
+                        }
                     } else {
-                        // Exibe o erro caso o login falhe
-                        Snackbar.make(findViewById(R.id.main), "Erro no login: " + task.getException().getMessage(), Snackbar.LENGTH_LONG)
-                                .setBackgroundTint(Color.RED)
-                                .setTextColor(Color.WHITE)
-                                .show();
+                        Snackbar.make(findViewById(R.id.main), "Erro no login: " + Objects.requireNonNull(task.getException()).getMessage(), Snackbar.LENGTH_LONG).setBackgroundTint(Color.RED).setTextColor(Color.WHITE).show();
                     }
                 });
     }
@@ -82,5 +87,24 @@ public class FormLogin extends AppCompatActivity {
         edit_senha = findViewById(R.id.edit_senha);
         bt_entrar = findViewById(R.id.bt_entrar);
         text_tela_cadastro = findViewById(R.id.text_tela_cadastro);
+    }
+
+    public static class Aluno {
+        private String email;
+
+        public Aluno() {
+        }
+
+        public Aluno(String email) {
+            this.email = email;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
     }
 }
